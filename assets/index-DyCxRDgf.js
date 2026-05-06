@@ -20,7 +20,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
       .dot-bloom{opacity:0;transform-box:fill-box;transform-origin:center;animation:dotBloom .45s ease-out var(--delay) forwards}
       @keyframes drawLine{0%{stroke-dashoffset:1;opacity:0}15%{opacity:.15}100%{stroke-dashoffset:0;opacity:1}}
       @keyframes dotBloom{0%{opacity:0;transform:scale(.2)}70%{opacity:1;transform:scale(1.12)}100%{opacity:1;transform:scale(1)}}
-      .hero-title{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:400;line-height:1.22;color:var(--text);margin-bottom:2rem}
+      .hero-title{font-family:var(--serif);font-size:clamp(2.35rem,4.9vw,3.8rem);font-weight:400;line-height:1.18;color:var(--text);margin-bottom:2rem}
       .hero-title .hl{font-style:italic;position:relative;display:inline-block}
       .hero-title .hl.green{color:var(--sage)}
       .uline-svg{position:absolute;bottom:-8px;left:-2%;width:104%;height:16px;pointer-events:none;stroke-dasharray:1;stroke-dashoffset:1}
@@ -142,7 +142,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
       .work-section{max-width:1100px;margin:0 auto;padding:0 5rem 3rem}
 
       .section-heading{
-        font-family:var(--serif);font-size:clamp(1.85rem,3vw,2.7rem);font-weight:400;line-height:1.1;
+        font-family:var(--serif);font-size:clamp(1.55rem,2.4vw,2.15rem);font-weight:400;line-height:1.1;
         margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid rgba(60,53,42,.14)
       }
 
