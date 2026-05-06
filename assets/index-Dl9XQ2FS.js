@@ -142,7 +142,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
       .work-section{max-width:1100px;margin:0 auto;padding:0 5rem 3rem}
 
       .section-heading{
-        font-family:var(--serif);font-size:clamp(1.55rem,2.4vw,2.15rem);font-weight:400;line-height:1.1;
+        font-family:var(--serif);font-size:clamp(1.35rem,2vw,1.8rem);font-weight:400;line-height:1.1;
         margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid rgba(60,53,42,.14)
       }
 
