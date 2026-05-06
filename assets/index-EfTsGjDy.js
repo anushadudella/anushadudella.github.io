@@ -32,7 +32,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
       .hero-sub a:hover{color:var(--blush)}
       @media(max-width:968px){.illustration-container{display:none}}
       @media(max-width:768px){.hero{padding:4.5rem 1.5rem 2rem}.hero-title{font-size:clamp(2.2rem,9vw,3.5rem)}}
-    `}),(0,j.jsxs)(`section`,{className:`hero`,children:[(0,j.jsxs)(`div`,{className:`hero-inner`,children:[(0,j.jsx)(Zn,{}),(0,j.jsxs)(`div`,{ref:e,style:{opacity:+!!t,transform:t?`translateY(0)`:`translateY(16px)`,transition:`opacity .7s ease 1.8s, transform .7s ease 1.8s`},children:[(0,j.jsx)(`p`,{className:`hero-intro`,children:`Studying Informatics with minors in Computer Science and Math, passionate about data science, statistics, and applied mathematics.`}),(0,j.jsxs)(`p`,{className:`hero-sub`,children:[`Currently working in SWE @ `,(0,j.jsx)(`b`,{children:`AIG`}),`. Always open for new roles, opportunities, or `,(0,j.jsx)(On,{to:`/about`,children:`conversations`}),`.`]})]})]}),(0,j.jsx)(`div`,{className:`illustration-container`,children:(0,j.jsx)(Qn,{})})]})]})}var er=`/assets/polaroid_port-DdUzyO-d.png`;function tr(e=.1){let t=(0,x.useRef)(null),[n,r]=(0,x.useState)(!1);return(0,x.useEffect)(()=>{let n=t.current;if(!n)return;let i=new IntersectionObserver(([e])=>{e.isIntersecting&&(r(!0),i.unobserve(n))},{threshold:e});return i.observe(n),()=>i.disconnect()},[e]),[t,n]}function nr({children:e,delay:t=0}){let[n,r]=tr();return(0,j.jsx)(`div`,{ref:n,style:{opacity:+!!r,transform:r?`translateY(0)`:`translateY(20px)`,transition:`opacity .7s ease ${t}s, transform .7s ease ${t}s`},children:e})}function rr(){(0,x.useEffect)(()=>{window.location.hash===`#favourites`&&setTimeout(()=>{document.getElementById(`favourites`)?.scrollIntoView({behavior:`smooth`})},300)},[]);let e=[{label:`scan 01`,rotate:-3.5},{label:`scan 02`,rotate:-.8},{label:`scan 03`,rotate:-2.2},{label:`scan 04`,rotate:1.6},{label:`scan 05`,rotate:2.2}];return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(`style`,{children:`
+    `}),(0,j.jsxs)(`section`,{className:`hero`,children:[(0,j.jsxs)(`div`,{className:`hero-inner`,children:[(0,j.jsx)(Zn,{}),(0,j.jsxs)(`div`,{ref:e,style:{opacity:+!!t,transform:t?`translateY(0)`:`translateY(16px)`,transition:`opacity .7s ease 1.8s, transform .7s ease 1.8s`},children:[(0,j.jsx)(`p`,{className:`hero-intro`,children:`Studying Informatics with minors in Computer Science and Math, passionate about data science, statistics, and applied mathematics.`}),(0,j.jsxs)(`p`,{className:`hero-sub`,children:[`Currently working in SWE @ `,(0,j.jsx)(`b`,{children:`AIG`}),`. Always open for new roles, opportunities, or `,(0,j.jsx)(On,{to:`/about`,children:`conversations`}),`.`]})]})]}),(0,j.jsx)(`div`,{className:`illustration-container`,children:(0,j.jsx)(Qn,{})})]})]})}var er=`/assets/polaroid_port-DdUzyO-d.png`;function tr(e=.1){let t=(0,x.useRef)(null),[n,r]=(0,x.useState)(!1);return(0,x.useEffect)(()=>{let n=t.current;if(!n)return;let i=new IntersectionObserver(([e])=>{e.isIntersecting&&(r(!0),i.unobserve(n))},{threshold:e});return i.observe(n),()=>i.disconnect()},[e]),[t,n]}function nr({children:e,delay:t=0}){let[n,r]=tr();return(0,j.jsx)(`div`,{ref:n,style:{opacity:+!!r,transform:r?`translateY(0)`:`translateY(20px)`,transition:`opacity .7s ease ${t}s, transform .7s ease ${t}s`},children:e})}function rr(){(0,x.useEffect)(()=>{window.location.hash===`#favourites`&&setTimeout(()=>{document.getElementById(`favourites`)?.scrollIntoView({behavior:`smooth`})},300)},[]);let[e,t]=(0,x.useState)(0);(0,x.useEffect)(()=>{let e=setInterval(()=>t(e=>(e+1)%n.length),2800);return()=>clearInterval(e)},[]);let n=[{label:`scan 01`,rotate:-3.5},{label:`scan 02`,rotate:-.8},{label:`scan 03`,rotate:-2.2},{label:`scan 04`,rotate:1.6},{label:`scan 05`,rotate:2.2}];return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(`style`,{children:`
       .about-page{padding-top:5.5rem}
 
       .about-hero{max-width:1100px;margin:0 auto;padding:2rem 5rem 2.5rem}
@@ -66,32 +66,28 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
       .collage-section{max-width:1100px;margin:0 auto;padding:1rem 5rem 3rem}
       .collage-title{font-family:var(--serif);font-size:clamp(2rem,3.2vw,3rem);line-height:1.06;margin-bottom:1rem}
       .collage-title em{color:var(--sage)}
-      .collage-sub{font-size:1rem;color:var(--text-soft);line-height:1.7;max-width:700px;margin-bottom:1.8rem}
-      .collage-wrap{
-        display:grid;
-        grid-template-columns:minmax(0,1.25fr) minmax(300px,.9fr) minmax(0,.5fr);
-        gap:2.5rem;
-        align-items:start;
-      }
-      .polaroid-strip{display:flex;gap:1.3rem;align-items:flex-start}
-      .polaroid-strip.end{justify-content:flex-end}
+      .collage-sub{font-size:1rem;color:var(--text-soft);line-height:1.7;max-width:760px;margin-bottom:1.8rem}
+      .carousel-shell{position:relative;overflow:hidden;padding:.8rem 0 1.2rem}
+      .carousel-window{overflow:hidden}
+      .carousel-track{display:flex;transition:transform .75s cubic-bezier(.22,1,.36,1)}
+      .carousel-slide{flex:0 0 33.333%;display:flex;justify-content:center;padding:0 .7rem}
       .polaroid{
         position:relative;
-        width:168px;
+        width:min(100%,260px);
         background:white;
-        padding:12px 12px 54px;
+        padding:12px 12px 18px;
         border-radius:4px;
         box-shadow:0 12px 26px rgba(0,0,0,.1),0 1px 4px rgba(0,0,0,.06);
         transition:all .4s cubic-bezier(.22,1,.36,1);
       }
-      .polaroid:hover{transform:translateY(-6px) rotate(0deg)!important;scale:1.04;box-shadow:0 14px 34px rgba(0,0,0,.12)}
+      .carousel-slide.active .polaroid{transform:translateY(-4px) scale(1.03);box-shadow:0 16px 32px rgba(0,0,0,.12)}
       .polaroid-img{
-        width:100%;aspect-ratio:.88/1;border-radius:2px;
+        width:100%;aspect-ratio:.8/1;border-radius:2px;
         background:
           linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.08)),
           linear-gradient(135deg,#f1f3ea,#f7f2ef 55%,#eef2e8);
         border:1px solid rgba(122,139,98,.08);
-        display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.65rem;
+        display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.75rem;
         color:#8a907e;
         text-transform:uppercase;
         letter-spacing:.12em;
@@ -103,18 +99,16 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
       .polaroid-caption{
         font-family:var(--sans);
         font-size:.8rem;color:var(--text-soft);
-        text-align:center;margin-top:12px;
+        text-align:center;margin-top:14px;
         letter-spacing:.12em;text-transform:uppercase;
       }
-      .memory-copy{
-        font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-        font-size:clamp(1rem,1.45vw,1.08rem);
-        line-height:1.7;
-        color:var(--text);
-        max-width:470px;
-        padding-top:1.8rem;
+      .carousel-dots{display:flex;justify-content:center;gap:.45rem;margin-top:1rem}
+      .carousel-dot{
+        width:8px;height:8px;border-radius:999px;border:none;background:rgba(122,139,98,.22);
+        transition:transform .25s ease, background .25s ease
       }
-      .collage-note{margin-top:1.2rem;font-size:.9rem;color:var(--text-soft);font-style:italic}
+      .carousel-dot.active{background:var(--sage);transform:scale(1.15)}
+      .collage-note{margin-top:1rem;font-size:.9rem;color:var(--text-soft);font-style:italic;text-align:center}
       .collage-note code{background:var(--sage-bg);padding:2px 6px;border-radius:4px;font-size:.82rem;color:var(--sage)}
       .slot-icon{
         width:34px;height:34px;border-radius:999px;border:1px solid rgba(122,139,98,.24);
@@ -126,13 +120,10 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
         .about-grid{grid-template-columns:1fr;gap:2rem}
         .about-photo{max-width:220px}
         .fav-grid{grid-template-columns:1fr}
-        .collage-wrap{grid-template-columns:1fr;gap:1.5rem}
-        .polaroid-strip{overflow-x:auto;padding-bottom:.3rem}
-        .polaroid-strip.end{justify-content:flex-start}
-        .polaroid{min-width:150px}
-        .memory-copy{padding-top:0}
+        .carousel-slide{flex-basis:72%}
+        .polaroid{max-width:100%}
       }
-    `}),(0,j.jsxs)(`div`,{className:`about-page`,children:[(0,j.jsx)(`div`,{className:`about-hero`,children:(0,j.jsxs)(nr,{children:[(0,j.jsxs)(`h1`,{className:`about-hero-title`,children:[`A little `,(0,j.jsx)(`em`,{children:`about me`})]}),(0,j.jsx)(`p`,{className:`about-hero-sub`,children:`nice to meet you!`})]})}),(0,j.jsxs)(`div`,{className:`about-grid`,children:[(0,j.jsx)(nr,{children:(0,j.jsx)(`div`,{className:`about-photo`,children:(0,j.jsx)(`img`,{src:er,alt:`Anusha`,style:{width:`100%`,height:`100%`,objectFit:`cover`,borderRadius:`20px`}})})}),(0,j.jsx)(nr,{delay:.1,children:(0,j.jsxs)(`div`,{className:`about-text`,children:[(0,j.jsxs)(`p`,{children:[`I'm studying `,(0,j.jsx)(`b`,{children:`Informatics`}),` at the `,(0,j.jsx)(`b`,{children:`University of Texas at Austin`}),` with minors in Computer Science, Statistical Modeling, and Applied Mathematics.`]}),(0,j.jsx)(`br`,{}),(0,j.jsx)(`p`,{children:`I'm especially interested in data, technology, and the ways thoughtful design and problem-solving can make everyday experiences feel intuitive and meaningful.`}),(0,j.jsx)(`br`,{}),(0,j.jsx)(`p`,{children:`In my free time I love to read, bake, attend concerts, explore Austin with my friends and family, and listen to music. Fun fact, I know how to ice skate pretty decently!!`})]})})]}),(0,j.jsx)(`div`,{className:`divider`,children:`─── ✿ ───`}),(0,j.jsxs)(`div`,{className:`fav-section`,id:`favourites`,children:[(0,j.jsxs)(nr,{children:[(0,j.jsx)(`h2`,{className:`section-heading`,children:`Current favourites`}),(0,j.jsx)(`p`,{className:`fav-intro`,children:`Some things I'm into right now `})]}),(0,j.jsx)(nr,{delay:.08,children:(0,j.jsx)(`div`,{className:`fav-box`,children:(0,j.jsx)(`div`,{className:`fav-grid`,children:[[`Currently reading`,`Yellowface, Remarkably Bright Creatures, As Long as the Lemon Trees Grow`],[`Music`,`Tame Impala, Blood Orange, Magdalena Bay, The Weeknd, Ariana Grande, The Marias, Sade`],[`Food`,`Pad Thai and/or a good veggie bowl at Chipotle`],[`Hobby`,`Exploring Austin & biking around`],[`Comfort show`,`Grey's Anatomy, New Girl`],[`Coding in`,`Python`]].map(([e,t],n)=>(0,j.jsxs)(`div`,{className:`fav-item`,children:[(0,j.jsx)(`div`,{className:`fav-cat`,children:e}),(0,j.jsx)(`div`,{className:`fav-val`,children:t})]},n))})})})]}),(0,j.jsx)(`div`,{className:`divider`,children:`─── ✩ ───`}),(0,j.jsxs)(`div`,{className:`collage-section`,children:[(0,j.jsxs)(nr,{children:[(0,j.jsxs)(`div`,{className:`collage-title`,children:[`Snippets of my `,(0,j.jsx)(`em`,{children:`life`})]}),(0,j.jsx)(`p`,{className:`collage-sub`,children:`Blank placeholders for the scanned polaroids you want to add later, in the same left-strip, text, right-frame layout as your reference.`})]}),(0,j.jsxs)(`div`,{className:`collage-wrap`,children:[(0,j.jsx)(`div`,{className:`polaroid-strip`,children:e.slice(0,4).map((e,t)=>(0,j.jsx)(nr,{delay:t*.06,children:(0,j.jsxs)(`div`,{className:`polaroid`,style:{transform:`rotate(${e.rotate}deg)`},children:[(0,j.jsxs)(`div`,{className:`polaroid-img`,children:[(0,j.jsx)(`span`,{className:`slot-icon`,children:`+`}),(0,j.jsx)(`span`,{className:`polaroid-dash`}),(0,j.jsx)(`span`,{children:e.label})]}),(0,j.jsx)(`div`,{className:`polaroid-caption`,children:`your scan here`})]})},e.label))}),(0,j.jsx)(nr,{delay:.16,children:(0,j.jsx)(`div`,{className:`memory-copy`,children:`born and raised with a soft spot for keepsakes, coffee runs, and little moments worth pinning up on a wall. this section is now just a clean placeholder, ready for the real polaroids once you scan them in.`})}),(0,j.jsx)(`div`,{className:`polaroid-strip end`,children:(0,j.jsx)(nr,{delay:.28,children:(0,j.jsxs)(`div`,{className:`polaroid`,style:{transform:`rotate(${e[4].rotate}deg)`},children:[(0,j.jsxs)(`div`,{className:`polaroid-img`,children:[(0,j.jsx)(`span`,{className:`slot-icon`,children:`+`}),(0,j.jsx)(`span`,{className:`polaroid-dash`}),(0,j.jsx)(`span`,{children:e[4].label})]}),(0,j.jsx)(`div`,{className:`polaroid-caption`,children:`your scan here`})]})})})]}),(0,j.jsx)(nr,{delay:.3,children:(0,j.jsxs)(`p`,{className:`collage-note`,children:[`when you scan them, we can swap these with real image files from `,(0,j.jsx)(`code`,{children:`src/assets/`})]})})]})]})]})}function ir(e=.1){let t=(0,x.useRef)(null),[n,r]=(0,x.useState)(!1);return(0,x.useEffect)(()=>{let n=t.current;if(!n)return;let i=new IntersectionObserver(([e])=>{e.isIntersecting&&(r(!0),i.unobserve(n))},{threshold:e});return i.observe(n),()=>i.disconnect()},[e]),[t,n]}function ar({children:e,delay:t=0}){let[n,r]=ir();return(0,j.jsx)(`div`,{ref:n,style:{opacity:+!!r,transform:r?`translateY(0)`:`translateY(20px)`,transition:`opacity .7s ease ${t}s, transform .7s ease ${t}s`},children:e})}var or={github:`https://github.com/anushadudella`,linkedin:`https://www.linkedin.com/in/anusha-dudella-167b25243/`,email:`mailto:anusharao4262@gmail.com`};function sr(){return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(`style`,{children:`
+    `}),(0,j.jsxs)(`div`,{className:`about-page`,children:[(0,j.jsx)(`div`,{className:`about-hero`,children:(0,j.jsxs)(nr,{children:[(0,j.jsxs)(`h1`,{className:`about-hero-title`,children:[`A little `,(0,j.jsx)(`em`,{children:`about me`})]}),(0,j.jsx)(`p`,{className:`about-hero-sub`,children:`nice to meet you!`})]})}),(0,j.jsxs)(`div`,{className:`about-grid`,children:[(0,j.jsx)(nr,{children:(0,j.jsx)(`div`,{className:`about-photo`,children:(0,j.jsx)(`img`,{src:er,alt:`Anusha`,style:{width:`100%`,height:`100%`,objectFit:`cover`,borderRadius:`20px`}})})}),(0,j.jsx)(nr,{delay:.1,children:(0,j.jsxs)(`div`,{className:`about-text`,children:[(0,j.jsxs)(`p`,{children:[`I'm studying `,(0,j.jsx)(`b`,{children:`Informatics`}),` at the `,(0,j.jsx)(`b`,{children:`University of Texas at Austin`}),` with minors in Computer Science, Statistical Modeling, and Applied Mathematics.`]}),(0,j.jsx)(`br`,{}),(0,j.jsx)(`p`,{children:`I'm especially interested in data, technology, and the ways thoughtful design and problem-solving can make everyday experiences feel intuitive and meaningful.`}),(0,j.jsx)(`br`,{}),(0,j.jsx)(`p`,{children:`In my free time I love to read, bake, attend concerts, explore Austin with my friends and family, and listen to music. Fun fact, I know how to ice skate pretty decently!!`})]})})]}),(0,j.jsx)(`div`,{className:`divider`,children:`─── ✿ ───`}),(0,j.jsxs)(`div`,{className:`fav-section`,id:`favourites`,children:[(0,j.jsxs)(nr,{children:[(0,j.jsx)(`h2`,{className:`section-heading`,children:`Current favourites`}),(0,j.jsx)(`p`,{className:`fav-intro`,children:`Some things I'm into right now `})]}),(0,j.jsx)(nr,{delay:.08,children:(0,j.jsx)(`div`,{className:`fav-box`,children:(0,j.jsx)(`div`,{className:`fav-grid`,children:[[`Currently reading`,`Yellowface, Remarkably Bright Creatures, As Long as the Lemon Trees Grow`],[`Music`,`Tame Impala, Blood Orange, Magdalena Bay, The Weeknd, Ariana Grande, The Marias, Sade`],[`Food`,`Pad Thai and/or a good veggie bowl at Chipotle`],[`Hobby`,`Exploring Austin & biking around`],[`Comfort show`,`Grey's Anatomy, New Girl`],[`Coding in`,`Python`]].map(([e,t],n)=>(0,j.jsxs)(`div`,{className:`fav-item`,children:[(0,j.jsx)(`div`,{className:`fav-cat`,children:e}),(0,j.jsx)(`div`,{className:`fav-val`,children:t})]},n))})})})]}),(0,j.jsx)(`div`,{className:`divider`,children:`─── ✩ ───`}),(0,j.jsxs)(`div`,{className:`collage-section`,children:[(0,j.jsxs)(nr,{children:[(0,j.jsxs)(`div`,{className:`collage-title`,children:[`Snippets of my `,(0,j.jsx)(`em`,{children:`life`})]}),(0,j.jsx)(`p`,{className:`collage-sub`,children:`A simple carousel for full polaroid scans, so when you scan them in Notes with the whole frame included, they can drop right in here.`})]}),(0,j.jsx)(nr,{delay:.08,children:(0,j.jsxs)(`div`,{className:`carousel-shell`,children:[(0,j.jsx)(`div`,{className:`carousel-window`,children:(0,j.jsx)(`div`,{className:`carousel-track`,style:{transform:`translateX(-${100/3*e}%)`},children:n.map((t,n)=>(0,j.jsx)(`div`,{className:`carousel-slide${n===e?` active`:``}`,children:(0,j.jsxs)(`div`,{className:`polaroid`,style:{transform:`rotate(${t.rotate}deg)`},children:[(0,j.jsxs)(`div`,{className:`polaroid-img`,children:[(0,j.jsx)(`span`,{className:`slot-icon`,children:`+`}),(0,j.jsx)(`span`,{className:`polaroid-dash`}),(0,j.jsx)(`span`,{children:t.label})]}),(0,j.jsx)(`div`,{className:`polaroid-caption`,children:`full scan here`})]})},t.label))})}),(0,j.jsx)(`div`,{className:`carousel-dots`,children:n.map((n,r)=>(0,j.jsx)(`button`,{type:`button`,className:`carousel-dot${r===e?` active`:``}`,onClick:()=>t(r),"aria-label":`Show ${n.label}`},n.label))})]})}),(0,j.jsx)(nr,{delay:.14,children:(0,j.jsxs)(`p`,{className:`collage-note`,children:[`replace each placeholder with a full scanned polaroid image from `,(0,j.jsx)(`code`,{children:`src/assets/`})]})})]})]})]})}function ir(e=.1){let t=(0,x.useRef)(null),[n,r]=(0,x.useState)(!1);return(0,x.useEffect)(()=>{let n=t.current;if(!n)return;let i=new IntersectionObserver(([e])=>{e.isIntersecting&&(r(!0),i.unobserve(n))},{threshold:e});return i.observe(n),()=>i.disconnect()},[e]),[t,n]}function ar({children:e,delay:t=0}){let[n,r]=ir();return(0,j.jsx)(`div`,{ref:n,style:{opacity:+!!r,transform:r?`translateY(0)`:`translateY(20px)`,transition:`opacity .7s ease ${t}s, transform .7s ease ${t}s`},children:e})}var or={github:`https://github.com/anushadudella`,linkedin:`https://www.linkedin.com/in/anusha-dudella-167b25243/`,email:`mailto:anusharao4262@gmail.com`};function sr(){return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(`style`,{children:`
       .work-page{padding-top:5.5rem}
       .work-hero{max-width:1100px;margin:0 auto;padding:2rem 5rem 2.5rem}
       .work-hero-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;margin-bottom:.4rem}
