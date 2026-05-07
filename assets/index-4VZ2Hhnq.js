@@ -32,7 +32,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
       .hero-sub a:hover{color:var(--blush)}
       @media(max-width:968px){.illustration-container{display:none}}
       @media(max-width:768px){.hero{padding:4.5rem 1.5rem 2rem}.hero-title{font-size:clamp(2.2rem,9vw,3.5rem)}}
-    `}),(0,j.jsxs)(`section`,{className:`hero`,children:[(0,j.jsxs)(`div`,{className:`hero-inner`,children:[(0,j.jsx)(Zn,{}),(0,j.jsxs)(`div`,{ref:e,style:{opacity:+!!t,transform:t?`translateY(0)`:`translateY(16px)`,transition:`opacity .7s ease 1.8s, transform .7s ease 1.8s`},children:[(0,j.jsx)(`p`,{className:`hero-intro`,children:`Studying Informatics with minors in Computer Science and Math, passionate about data science, statistics, and applied mathematics.`}),(0,j.jsxs)(`p`,{className:`hero-sub`,children:[`Currently working in SWE @ `,(0,j.jsx)(`b`,{children:`AIG`}),`. Always open for new roles, opportunities, or `,(0,j.jsx)(On,{to:`/about`,children:`conversations`}),`.`]})]})]}),(0,j.jsx)(`div`,{className:`illustration-container`,children:(0,j.jsx)(Qn,{})})]})]})}var er=`/assets/polaroid_port-DdUzyO-d.png`;function tr(e=.1){let t=(0,x.useRef)(null),[n,r]=useState(!1);return(0,x.useEffect)(()=>{let n=t.current;if(!n)return;let i=new IntersectionObserver(([e])=>{e.isIntersecting&&(r(!0),i.unobserve(n))},{threshold:e});return i.observe(n),()=>i.disconnect()},[e]),[t,n]}function nr({children:e,delay:t=0}){let[n,r]=tr();return(0,j.jsx)(`div`,{ref:n,style:{opacity:+!!r,transform:r?`translateY(0)`:`translateY(20px)`,transition:`opacity .7s ease ${t}s, transform .7s ease ${t}s`},children:e})}function rr(){(0,x.useEffect)(()=>{window.location.hash===`#favourites`&&setTimeout(()=>{document.getElementById(`favourites`)?.scrollIntoView({behavior:`smooth`})},300)},[]);let e=[{label:`scan 01`,rotate:-3.5},{label:`scan 02`,rotate:-.8},{label:`scan 03`,rotate:-2.2},{label:`scan 04`,rotate:1.6},{label:`scan 05`,rotate:2.2}],t=[...e,...e];return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(`style`,{children:`
+    `}),(0,j.jsxs)(`section`,{className:`hero`,children:[(0,j.jsxs)(`div`,{className:`hero-inner`,children:[(0,j.jsx)(Zn,{}),(0,j.jsxs)(`div`,{ref:e,style:{opacity:+!!t,transform:t?`translateY(0)`:`translateY(16px)`,transition:`opacity .7s ease 1.8s, transform .7s ease 1.8s`},children:[(0,j.jsx)(`p`,{className:`hero-intro`,children:`Studying Informatics with minors in Computer Science and Math, passionate about data science, statistics, and applied mathematics.`}),(0,j.jsxs)(`p`,{className:`hero-sub`,children:[`Currently working in SWE @ `,(0,j.jsx)(`b`,{children:`AIG`}),`. Always open for new roles, opportunities, or `,(0,j.jsx)(On,{to:`/about`,children:`conversations`}),`.`]})]})]}),(0,j.jsx)(`div`,{className:`illustration-container`,children:(0,j.jsx)(Qn,{})})]})]})}var er=`/assets/polaroid_port-DdUzyO-d.png`;function tr(e=.1){let t=(0,x.useRef)(null),[n,r]=(0,x.useState)(!1);return(0,x.useEffect)(()=>{let n=t.current;if(!n)return;let i=new IntersectionObserver(([e])=>{e.isIntersecting&&(r(!0),i.unobserve(n))},{threshold:e});return i.observe(n),()=>i.disconnect()},[e]),[t,n]}function nr({children:e,delay:t=0}){let[n,r]=tr();return(0,j.jsx)(`div`,{ref:n,style:{opacity:+!!r,transform:r?`translateY(0)`:`translateY(20px)`,transition:`opacity .7s ease ${t}s, transform .7s ease ${t}s`},children:e})}function rr(){(0,x.useEffect)(()=>{window.location.hash===`#favourites`&&setTimeout(()=>{document.getElementById(`favourites`)?.scrollIntoView({behavior:`smooth`})},300)},[]);let e=[{label:`scan 01`,rotate:-3.5},{label:`scan 02`,rotate:-.8},{label:`scan 03`,rotate:-2.2},{label:`scan 04`,rotate:1.6},{label:`scan 05`,rotate:2.2}],t=[...e,...e,...e];return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(`style`,{children:`
       .about-page{padding-top:5.5rem}
 
       .about-hero{max-width:1100px;margin:0 auto;padding:2rem 5rem 2.5rem}
@@ -67,21 +67,26 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
       .collage-title{font-family:var(--serif);font-size:clamp(2rem,3.2vw,3rem);line-height:1.06;margin-bottom:1rem}
       .collage-title em{color:var(--sage)}
       .collage-sub{font-size:1rem;color:var(--text-soft);line-height:1.7;max-width:760px;margin-bottom:1.8rem}
-      .carousel-shell{position:relative;overflow:hidden;padding:.8rem 0 1.2rem}
+      .carousel-shell{
+        --card-width:260px;
+        --card-gap:1.4rem;
+        position:relative;overflow:hidden;padding:.8rem 0 1.2rem
+      }
       .carousel-window{overflow:hidden}
       .carousel-track{
-        display:flex;align-items:flex-start;width:max-content;
-        animation:endlessCarousel 26s linear infinite;
+        display:flex;align-items:flex-start;gap:var(--card-gap);width:max-content;
+        animation:endlessCarousel 24s linear infinite;
+        will-change:transform;
       }
       .carousel-shell:hover .carousel-track{animation-play-state:paused}
-      .carousel-slide{flex:0 0 auto;display:flex;justify-content:center;padding:0 .7rem}
+      .carousel-slide{flex:0 0 auto;display:flex;justify-content:center}
       @keyframes endlessCarousel{
         from{transform:translateX(0)}
-        to{transform:translateX(-50%)}
+        to{transform:translateX(calc(-1 * ((var(--card-width) + var(--card-gap)) * 5)))}
       }
       .polaroid{
         position:relative;
-        width:260px;
+        width:var(--card-width);
         background:white;
         padding:12px 12px 18px;
         border-radius:4px;
@@ -122,8 +127,8 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
         .about-grid{grid-template-columns:1fr;gap:2rem}
         .about-photo{max-width:220px}
         .fav-grid{grid-template-columns:1fr}
-        .carousel-track{animation-duration:22s}
-        .polaroid{width:210px}
+        .carousel-shell{--card-width:210px;--card-gap:1rem}
+        .carousel-track{animation-duration:20s}
       }
     `}),(0,j.jsxs)(`div`,{className:`about-page`,children:[(0,j.jsx)(`div`,{className:`about-hero`,children:(0,j.jsxs)(nr,{children:[(0,j.jsxs)(`h1`,{className:`about-hero-title`,children:[`A little `,(0,j.jsx)(`em`,{children:`about me`})]}),(0,j.jsx)(`p`,{className:`about-hero-sub`,children:`nice to meet you!`})]})}),(0,j.jsxs)(`div`,{className:`about-grid`,children:[(0,j.jsx)(nr,{children:(0,j.jsx)(`div`,{className:`about-photo`,children:(0,j.jsx)(`img`,{src:er,alt:`Anusha`,style:{width:`100%`,height:`100%`,objectFit:`cover`,borderRadius:`20px`}})})}),(0,j.jsx)(nr,{delay:.1,children:(0,j.jsxs)(`div`,{className:`about-text`,children:[(0,j.jsxs)(`p`,{children:[`I'm studying `,(0,j.jsx)(`b`,{children:`Informatics`}),` at the `,(0,j.jsx)(`b`,{children:`University of Texas at Austin`}),` with minors in Computer Science, Statistical Modeling, and Applied Mathematics.`]}),(0,j.jsx)(`br`,{}),(0,j.jsx)(`p`,{children:`I'm especially interested in data, technology, and the ways thoughtful design can make everyday experiences feel intuitive and meaningful.`}),(0,j.jsx)(`br`,{}),(0,j.jsx)(`p`,{children:`In my free time I love to read, bake, attend concerts, explore Austin with my friends and family, and listen to music.`})]})})]}),(0,j.jsx)(`div`,{className:`divider`,children:`─── ✿ ───`}),(0,j.jsxs)(`div`,{className:`fav-section`,id:`favourites`,children:[(0,j.jsx)(nr,{children:(0,j.jsx)(`h2`,{className:`section-heading`,children:`Current favourites`})}),(0,j.jsx)(nr,{delay:.08,children:(0,j.jsx)(`div`,{className:`fav-box`,children:(0,j.jsx)(`div`,{className:`fav-grid`,children:[[`Currently reading`,`Yellowface, Remarkably Bright Creatures, As Long as the Lemon Trees Grow`],[`Music`,`Tame Impala, Blood Orange, Magdalena Bay, The Weeknd, Ariana Grande, The Marias, Sade`],[`Food`,`Pad Thai and/or a good veggie bowl at Chipotle`],[`Hobby`,`Exploring Austin & biking around`],[`Comfort show`,`Grey's Anatomy, New Girl`],[`Coding in`,`Python`]].map(([e,t],n)=>(0,j.jsxs)(`div`,{className:`fav-item`,children:[(0,j.jsx)(`div`,{className:`fav-cat`,children:e}),(0,j.jsx)(`div`,{className:`fav-val`,children:t})]},n))})})})]}),(0,j.jsx)(`div`,{className:`divider`,children:`─── ✿ ───`}),(0,j.jsxs)(`div`,{className:`collage-section`,children:[(0,j.jsxs)(nr,{children:[(0,j.jsxs)(`div`,{className:`collage-title`,children:[`Snippets of my `,(0,j.jsx)(`em`,{children:`life`})]}),(0,j.jsx)(`p`,{className:`collage-sub`,children:`A simple carousel for full polaroid scans, so when you scan them in Notes with the whole frame included, they can drop right in here.`})]}),(0,j.jsx)(nr,{delay:.08,children:(0,j.jsx)(`div`,{className:`carousel-shell`,children:(0,j.jsx)(`div`,{className:`carousel-window`,children:(0,j.jsx)(`div`,{className:`carousel-track`,children:t.map((e,t)=>(0,j.jsx)(`div`,{className:`carousel-slide`,children:(0,j.jsxs)(`div`,{className:`polaroid`,style:{transform:`rotate(${e.rotate}deg)`},children:[(0,j.jsxs)(`div`,{className:`polaroid-img`,children:[(0,j.jsx)(`span`,{className:`slot-icon`,children:`+`}),(0,j.jsx)(`span`,{className:`polaroid-dash`}),(0,j.jsx)(`span`,{children:e.label})]}),(0,j.jsx)(`div`,{className:`polaroid-caption`,children:`full scan here`})]})},`${e.label}-${t}`))})})})}),(0,j.jsx)(nr,{delay:.14,children:(0,j.jsxs)(`p`,{className:`collage-note`,children:[`replace each placeholder with a full scanned polaroid image from `,(0,j.jsx)(`code`,{children:`src/assets/`})]})})]})]})]})}function ir(e=.1){let t=(0,x.useRef)(null),[n,r]=(0,x.useState)(!1);return(0,x.useEffect)(()=>{let n=t.current;if(!n)return;let i=new IntersectionObserver(([e])=>{e.isIntersecting&&(r(!0),i.unobserve(n))},{threshold:e});return i.observe(n),()=>i.disconnect()},[e]),[t,n]}function ar({children:e,delay:t=0}){let[n,r]=ir();return(0,j.jsx)(`div`,{ref:n,style:{opacity:+!!r,transform:r?`translateY(0)`:`translateY(20px)`,transition:`opacity .7s ease ${t}s, transform .7s ease ${t}s`},children:e})}var or={github:`https://github.com/anushadudella`,linkedin:`https://www.linkedin.com/in/anusha-dudella-167b25243/`,email:`mailto:anusharao4262@gmail.com`};function sr(){return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(`style`,{children:`
       .work-page{padding-top:5.5rem}
