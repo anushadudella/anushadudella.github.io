@@ -1,28 +1,166 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Resume | Anusha Dudella</title>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <style>
-    *{box-sizing:border-box}body{margin:0;color:#1a1a18;background:linear-gradient(150deg,#EBF0E3,#FDFAF6 55%,#F8ECEE);font-family:Arial,sans-serif;min-height:100vh}nav{padding:24px;text-align:center}a{color:#596c42}nav a{margin:0 14px;text-decoration:none}main{padding:40px 20px}.card{margin:5vh auto 0;max-width:440px;padding:40px 32px;border:1px solid #e2dcd0;border-radius:24px;background:#ffffff99;text-align:center}h1{font-family:Georgia,serif;font-size:30px;font-weight:400;margin:12px 0}p{color:#66665a;line-height:1.6}label{display:block;text-align:left;font-size:14px;margin:24px 0 8px}input,button,.download{font:inherit;padding:14px 20px;border-radius:24px}input{width:100%;border:1px solid #c7c9bf;background:#fff}button,.download{border:0;background:#718158;color:white;cursor:pointer;text-decoration:none}button{margin-top:16px;width:100%}button:disabled{opacity:.6;cursor:wait}:focus-visible{outline:3px solid #9a6880;outline-offset:4px}#status{min-height:24px;font-size:14px}#viewer{max-width:1000px;margin:auto}#viewer[hidden],.card[hidden]{display:none}.toolbar{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:20px}.toolbar button{width:auto;margin:0;background:#e9e5dc;color:#333}iframe{width:100%;height:78vh;border:1px solid #e2dcd0;border-radius:12px;background:white}.flower{font-size:28px;color:#b9808a}@media(max-width:480px){main{padding:20px 16px}.card{padding:30px 24px}nav a{margin:0 10px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>anushapersonalport</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  @view-transition{navigation:auto}
+  .nav{view-transition-name:nav}
+
+  :root{
+    --bg:#FDFAF6;--bg-alt:#F7F3EC;--sage-bg:#ECF1E4;--sage:#7A8B62;--sage-light:#95A87E;
+    --blush-bg:#F8EDEE;--blush:#C9919A;--blush-light:#E0B5BC;--cream:#EDE6DA;--border:#E2DCD0;
+    --text:#1a1a18;--text-mid:#3a3a32;--text-soft:#7a7a6e;
+    --serif:'Playfair Display',serif;--sans:'Instrument Sans',sans-serif;
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;cursor:none!important}
+  html{scroll-behavior:smooth;min-height:100%}
+  body{
+    font-family:var(--sans);
+    background:linear-gradient(180deg,#EBF0E3 0%,#F2EFE8 12%,#FDFAF6 28%,#FDFAF6 55%,#FBF4F3 72%,#F8ECEE 88%,#F3E2E5 100%);
+    background-attachment:fixed;color:var(--text);
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh;
+    display:flex;flex-direction:column;
+  }
+  ::selection{background:var(--blush-bg);color:var(--text)}
+
+  .cursor-flower{position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);filter:drop-shadow(0 1px 2px rgba(0,0,0,.06));left:-50px;top:-50px}
+  .cursor-trail{position:fixed;width:5px;height:5px;background:var(--blush-light);border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);animation:tf .5s ease-out forwards}
+  @keyframes tf{0%{opacity:.45;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(.15)}}
+  .bloom{position:fixed;pointer-events:none;z-index:9998;font-size:1.1rem;animation:bo .8s ease-out forwards}
+  @keyframes bo{0%{transform:translate(-50%,-50%) scale(0);opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1) rotate(var(--rot));opacity:0}}
+
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 5rem;display:flex;align-items:center;justify-content:center;gap:.4rem;background:rgba(253,250,246,.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .nav-link{font-family:var(--sans);font-size:1.15rem;font-weight:400;color:var(--text-soft);text-decoration:none;padding:.4rem .8rem;border-radius:6px;transition:all .25s;position:relative}
+  .nav-link::after{content:'';position:absolute;bottom:2px;left:.8rem;right:.8rem;height:1px;background:transparent;transition:background .25s}
+  .nav-link:hover,.nav-link.active{color:var(--text)}
+  .nav-link.active::after{background:var(--text)}
+  .nav-link:hover::after{background:var(--border)}
+  .nav-slash{color:var(--border);font-size:1.1rem;margin:0 .7rem;user-select:none}
+  .hamburger{display:none;position:fixed;top:1.5rem;right:1.5rem;z-index:200;background:none;border:none;width:28px;height:20px}
+  .hamburger span{display:block;width:100%;height:1.5px;background:var(--text);position:absolute;left:0;transition:all .35s}
+  .hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
+  .hamburger.open span:nth-child(1){top:9px;transform:rotate(45deg)}.hamburger.open span:nth-child(2){opacity:0}.hamburger.open span:nth-child(3){top:9px;transform:rotate(-45deg)}
+  .mobile-menu{position:fixed;inset:0;z-index:99;background:var(--bg);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding-left:3rem;gap:2rem;opacity:0;pointer-events:none;transition:opacity .3s}
+  .mobile-menu.open{opacity:1;pointer-events:all}
+  .mobile-menu a{font-family:var(--serif);font-size:2.8rem;color:var(--text);text-decoration:none}
+
+  .page-wrap{flex:1;animation:pi .5s ease-out;padding:9rem 0 3rem}
+  @keyframes pi{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:translateY(0)}}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 5rem}
+  em{font-style:italic;color:var(--sage)}
+
+  .card{max-width:460px;margin:2vh auto 0;padding:3rem 2.5rem;border:1px solid var(--border);border-radius:24px;background:rgba(255,255,255,.55);text-align:center}
+  .card[hidden],#viewer[hidden]{display:none}
+  .flower{font-size:1.8rem;color:var(--blush);line-height:1}
+  h1{font-family:var(--serif);font-size:2.4rem;font-weight:400;margin:.9rem 0 .6rem}
+  .sub{color:var(--text-soft);font-size:1.05rem;line-height:1.6}
+  label{display:block;text-align:left;font-size:.9rem;color:var(--text-mid);margin:1.8rem 0 .5rem}
+  input{width:100%;font:inherit;padding:.85rem 1.3rem;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.8);color:var(--text);outline:none;transition:border-color .25s,background .25s}
+  input:focus{border-color:var(--blush);background:#fff}
+  .c-btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.75rem 1.8rem;border-radius:999px;font:inherit;font-size:.95rem;font-weight:500;text-decoration:none;border:0;transition:all .35s cubic-bezier(.22,1,.36,1)}
+  .c-btn.fill{background:var(--sage);color:#fff}
+  .c-btn.fill:hover{background:var(--text);transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
+  .c-btn.line{background:rgba(255,255,255,.5);color:var(--text);border:1px solid var(--border)}
+  .c-btn.line:hover{border-color:var(--blush);transform:translateY(-3px);background:#fff}
+  #submit{width:100%;margin-top:1.1rem}
+  #submit:disabled{opacity:.6}
+  #status{min-height:1.5rem;margin-top:.9rem;font-size:.9rem;color:var(--text-soft)}
+
+  #viewer{max-width:1000px;margin:0 auto}
+  .toolbar{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:1rem}
+  .note{color:var(--text-soft);font-size:.9rem;margin-bottom:1rem}
+  iframe{width:100%;height:78vh;border:1px solid var(--border);border-radius:16px;background:#fff}
+
+  .footer{text-align:center;padding:1.5rem;font-size:.92rem;color:var(--text-soft);line-height:1.6}
+  :focus-visible{outline:2px solid var(--blush);outline-offset:3px}
+
+  @media(max-width:768px){
+    .nav{display:none}.hamburger{display:block}
+    .wrap{padding:0 1.5rem}
+    .page-wrap{padding-top:6rem}
+    .card{padding:2.2rem 1.5rem}
+    .cursor-flower,.cursor-trail{display:none}*,a{cursor:auto!important}
+  }
+  @media(prefers-reduced-motion:reduce){.page-wrap{animation:none}}
+</style>
 </head>
 <body>
-  <nav aria-label="Main navigation"><a href="/">home</a><a href="/about">about</a><a href="/work">work</a><a href="/resume/" aria-current="page">resume</a></nav>
-  <main>
-    <section class="card" id="gate">
-      <div class="flower" aria-hidden="true">✿</div><h1>Resume access</h1><p>Enter the password to view my resume.</p>
-      <form id="unlock"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required aria-describedby="status"><button id="submit" type="submit">View resume ↗</button><p id="status" role="status" aria-live="polite"></p></form>
-    </section>
-    <section id="viewer" hidden aria-label="Resume">
-      <div class="toolbar"><a id="download" class="download" download="Anusha_Dudella_Resume.pdf">Download resume</a><button id="lock" type="button">Lock resume</button></div>
-      <p>If the preview isn’t supported by your browser, use Download resume.</p>
-      <iframe id="pdf" title="Anusha Dudella’s resume"></iframe>
-    </section>
-  </main>
+  <div class="cursor-flower" id="flower" aria-hidden="true">
+    <svg viewBox="0 0 28 28" width="24" height="24" fill="none"><g opacity=".85">
+      <ellipse cx="14" cy="7" rx="4" ry="6.5" fill="#E0B5BC"/>
+      <ellipse cx="14" cy="7" rx="4" ry="6.5" fill="#D4A0A8" transform="rotate(72 14 14)"/>
+      <ellipse cx="14" cy="7" rx="4" ry="6.5" fill="#E0B5BC" transform="rotate(144 14 14)"/>
+      <ellipse cx="14" cy="7" rx="4" ry="6.5" fill="#D4A0A8" transform="rotate(216 14 14)"/>
+      <ellipse cx="14" cy="7" rx="4" ry="6.5" fill="#E0B5BC" transform="rotate(288 14 14)"/>
+      <circle cx="14" cy="14" r="3.5" fill="#C9919A"/><circle cx="14" cy="14" r="1.8" fill="#95A87E"/></g></svg>
+  </div>
+
+  <nav class="nav" aria-label="Main navigation">
+    <a class="nav-link" href="/">home</a><span class="nav-slash">/</span>
+    <a class="nav-link" href="/#/about">about</a><span class="nav-slash">/</span>
+    <a class="nav-link" href="/#/work">work</a><span class="nav-slash">/</span>
+    <a class="nav-link active" href="/resume/" aria-current="page">resume</a>
+  </nav>
+  <button class="hamburger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="mobile-menu" id="menu">
+    <a href="/">home</a><a href="/#/about">about</a><a href="/#/work">work</a><a href="/resume/">resume</a>
+  </div>
+
+  <div class="page-wrap">
+    <div class="wrap">
+      <section class="card" id="gate">
+        <div class="flower" aria-hidden="true">✿</div>
+        <h1>Resume <em>access</em></h1>
+        <p class="sub">Enter the password to view my resume.</p>
+        <form id="unlock">
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password" required aria-describedby="status">
+          <button class="c-btn fill" id="submit" type="submit">View resume ↗</button>
+          <p id="status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="viewer" hidden aria-label="Resume">
+        <div class="toolbar">
+          <a id="download" class="c-btn fill" download="Anusha_Dudella_Resume.pdf">Download resume</a>
+          <button id="lock" class="c-btn line" type="button">Lock resume</button>
+        </div>
+        <p class="note">If the preview isn’t supported by your browser, use Download resume.</p>
+        <iframe id="pdf" title="Anusha Dudella’s resume"></iframe>
+      </section>
+    </div>
+  </div>
+
+  <footer class="footer">Anusha Dudella — © 2026 · built with care</footer>
+
+  <script>
+    const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+    burger.addEventListener('click',()=>{burger.classList.toggle('open');menu.classList.toggle('open')});
+    if(matchMedia('(min-width:769px)').matches){
+      const f=document.getElementById('flower');let last=0,n=0;
+      const emojis=['🌸','✿','❀','🌷','💮'];
+      addEventListener('mousemove',e=>{
+        f.style.left=e.clientX+'px';f.style.top=e.clientY+'px';
+        const t=Date.now();
+        if(t-last>70){last=t;const d=document.createElement('div');d.className='cursor-trail';
+          d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';document.body.appendChild(d);setTimeout(()=>d.remove(),500)}
+      });
+      addEventListener('mousedown',e=>{
+        for(let i=0;i<5;i++){const b=document.createElement('div');b.className='bloom';b.textContent=emojis[(n+i)%5];
+          const a=(i/5)*Math.PI*2;b.style.left=e.clientX+'px';b.style.top=e.clientY+'px';
+          b.style.setProperty('--dx',Math.cos(a)*34+'px');b.style.setProperty('--dy',Math.sin(a)*34+'px');
+          b.style.setProperty('--rot',(i*40-80)+'deg');document.body.appendChild(b);setTimeout(()=>b.remove(),900)}
+        n++;
+      });
+    }
+  </script>
   <script type="module" src="./unlock.js"></script>
 </body>
 </html>
